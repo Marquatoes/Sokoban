@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Sokoban
 {
-    public class Bestemming : Vak
+    public class Goal : Obstacle
     {
     }
 }

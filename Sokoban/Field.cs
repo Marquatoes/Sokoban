@@ -5,18 +5,15 @@ using System.Text;
 
 namespace Sokoban
 {
-    public class Spel
+    public class Field
     {
-
-        public Speler Speler
+        public List<Square> vakken;
+        public Field()
         {
-            get => default(Speler);
-            set
-            {
-            }
+            vakken = new List<Square>();
         }
 
-        public bool AllCratesOnDestination()
+        public void MoveCrate()
         {
             throw new System.NotImplementedException();
         }

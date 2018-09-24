@@ -1,92 +1,77 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Sokoban.Vloer">
+  <Class Name="Sokoban.Field">
     <Position X="7.25" Y="0.75" Width="1.5" />
-    <AssociationLine Name="vakken" Type="Sokoban.Vak">
+    <AssociationLine Name="vakken" Type="Sokoban.Square">
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="-0.775" Y="0.06" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAIAEAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Vloer.cs</FileName>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Field.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Kist" />
-    </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Field Name="vakken" />
     </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="Sokoban.Vorkheftruck">
-    <Position X="4.25" Y="3.25" Width="1.5" />
+  <Class Name="Sokoban.Square">
+    <Position X="7.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Vorkheftruck.cs</FileName>
+      <HashCode>AAAAAAIAACAAAAAAAAAAAAAAAAAAAAAACACAAAAAAAI=</HashCode>
+      <FileName>Square.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Vak" />
-    </ShowAsAssociation>
   </Class>
-  <Class Name="Sokoban.Vak">
-    <Position X="7.25" Y="3" Width="1.5" />
-    <AssociationLine Name="vloer" Type="Sokoban.Vloer" FixedFromPoint="true">
-      <Path>
-        <Point X="7.5" Y="3" />
-        <Point X="7.5" Y="2.046" />
-      </Path>
-    </AssociationLine>
+  <Class Name="Sokoban.Crate">
+    <Position X="10.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAAAAAAIAACQAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Vak.cs</FileName>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Crate.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="vloer" />
-    </ShowAsAssociation>
   </Class>
-  <Class Name="Sokoban.Kist">
-    <Position X="10.25" Y="3.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAICAAAAAAAAAAAACQAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Kist.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Vak" />
-    </ShowAsAssociation>
-  </Class>
-  <Class Name="Sokoban.Muur">
-    <Position X="6.25" Y="5.75" Width="1.5" />
+  <Class Name="Sokoban.Wall">
+    <Position X="4.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Muur.cs</FileName>
+      <FileName>Wall.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sokoban.Bestemming">
-    <Position X="8.5" Y="5.75" Width="1.5" />
+  <Class Name="Sokoban.Goal">
+    <Position X="9.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Bestemming.cs</FileName>
+      <FileName>Goal.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sokoban.Spel">
+  <Class Name="Sokoban.Game">
     <Position X="0.75" Y="0.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>BAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Spel.cs</FileName>
+      <HashCode>BAAAAAAEAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Speler" />
+      <Property Name="Vloer" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Sokoban.Speler">
+  <Class Name="Sokoban.Player">
     <Position X="4.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAIAgAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
-      <FileName>Speler.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAIAgAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Player.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Vloer" />
-      <Property Name="Vorkheftruck" />
+      <Property Name="Square" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Sokoban.Obstacle">
+    <Position X="7.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAgAAAAIAA=</HashCode>
+      <FileName>Obstacle.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Square" />
     </ShowAsAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />

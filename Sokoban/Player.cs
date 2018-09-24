@@ -5,23 +5,19 @@ using System.Text;
 
 namespace Sokoban
 {
-    public class Vloer
+    public class Player
     {
-        private List<Vak> vakken;
-        public Vloer()
-        {
-            vakken = new List<Vak>();
-        }
+        public Square locatie { get; set; }
 
-        public Kist Kist
+        public Square Square
         {
-            get => default(Kist);
+            get => default(Square);
             set
             {
             }
         }
 
-        public void MoveCrate()
+        public void MoveTruck(Square oldlocation, string direction)
         {
             throw new System.NotImplementedException();
         }

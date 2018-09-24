@@ -5,25 +5,24 @@ using System.Text;
 
 namespace Sokoban
 {
-    public class Speler
+    public class Game
     {
-        public Vloer Vloer
+
+        public Player Speler
         {
-            get => default(Vloer);
+            get => default(Player);
             set
             {
             }
         }
 
-        public Vorkheftruck Vorkheftruck
+        public Field Vloer
         {
-            get => default(Vorkheftruck);
-            set
-            {
-            }
+            get;
+            set;
         }
 
-        public void MoveTruck(Vak oldlocation, string direcetion)
+        public bool AllCratesOnDestination()
         {
             throw new System.NotImplementedException();
         }

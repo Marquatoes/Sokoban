@@ -5,14 +5,11 @@ using System.Text;
 
 namespace Sokoban
 {
-    public class Vorkheftruck
+    public class Wall : Obstacle
     {
-        public Vak Vak
+        public Wall()
         {
-            get => default(Vak);
-            set
-            {
-            }
+            this.canMove = false;
         }
     }
 }

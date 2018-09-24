@@ -6,17 +6,16 @@ using System.Text;
 namespace Sokoban
 {
     
-    public class Vak
+    public class Square
     {
-        private Vloer vloer;
-        protected int row;
-        protected int column;
+        private Square Up;
+        private Square Down;
+        private Square Right;
+        private Square Left;
 
-        public Vak(Vloer vloer, int row , int column)
+        public Square()
         {
-            this.vloer = vloer;
-            this.row = row;
-            this.column = column;
+            
         }
 
         public void IsMovable()
