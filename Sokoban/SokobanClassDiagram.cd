@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Sokoban.Vloer">
+    <Position X="7.25" Y="0.75" Width="1.5" />
+    <AssociationLine Name="vakken" Type="Sokoban.Vak">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.775" Y="0.06" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAEAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Vloer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Kist" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="vakken" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Sokoban.Vorkheftruck">
+    <Position X="4.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Vorkheftruck.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Vak" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Sokoban.Vak">
+    <Position X="7.25" Y="3" Width="1.5" />
+    <AssociationLine Name="vloer" Type="Sokoban.Vloer" FixedFromPoint="true">
+      <Path>
+        <Point X="7.5" Y="3" />
+        <Point X="7.5" Y="2.046" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAIAACQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Vak.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="vloer" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Sokoban.Kist">
+    <Position X="10.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAICAAAAAAAAAAAACQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Kist.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Vak" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Sokoban.Muur">
+    <Position X="6.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Muur.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sokoban.Bestemming">
+    <Position X="8.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Bestemming.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sokoban.Spel">
+    <Position X="0.75" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Spel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Speler" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Sokoban.Speler">
+    <Position X="4.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAgAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Speler.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Vloer" />
+      <Property Name="Vorkheftruck" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
