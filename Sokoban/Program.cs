@@ -10,11 +10,10 @@ namespace Sokoban
     {
         static void Main(string[] args)
         {
-            Parser parser = new Parser();
-            parser.GetLevel(1);
-            //Field level = new Field();
-            //level.LoadLevel(1);
-            //level.ShowField();
+            Field level = new Field();
+            level.LoadLevel(1);
+            level.ShowField();
+            Console.ReadKey();
         }
     }
 }

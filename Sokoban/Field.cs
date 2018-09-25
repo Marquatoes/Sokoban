@@ -23,6 +23,7 @@ namespace Sokoban
             List<List<char>> levelLayout = parser.GetLevel(level);
             for(int i= 0; i <levelLayout.Count; i++)
             {
+                Layout.Add(new List<Square>());
                 for(int j=0; j < levelLayout[i].Count; j++)
                 {
                   addSquare(levelLayout[i][j], i);
@@ -55,6 +56,10 @@ namespace Sokoban
                     square.Obstacle = new Truck();
                     Layout[row].Add(square);
                     break;
+                case '.':
+                    square = new Square();
+                    Layout[row].Add(square);
+                    break;
             }
         }
         private void linkField()
@@ -63,13 +68,13 @@ namespace Sokoban
             {
                 for (int j = 0; j < Layout[i].Count; j++)
                 {
-                    if(i != 0 && Layout[i-1][j] != null)
+                    if(i != 0 && Layout[i-1].Count > j && Layout[i-1][j] != null)
                     {
                         Layout[i][j].Up = Layout[i - 1][j];
                     }
-                    if(i != Layout.Count -1 && Layout[i+1][j] != null)
+                    if (i != Layout.Count - 1 && Layout[i + 1].Count > j && Layout[i+1][j] != null)
                     {
-                        Layout[i][j].Up = Layout[i + 1][j];
+                        Layout[i][j].Down = Layout[i + 1][j];
                     }
                     if (j < Layout[i].Count - 1)
                     {
@@ -98,7 +103,9 @@ namespace Sokoban
                     else if (current.Obstacle is Truck)
                         Console.Write('@');
                     else
-                        Console.Write(' ');
+                        Console.Write('.');
+
+                    current = current.Right;
                 }
                 Console.WriteLine();
             }
