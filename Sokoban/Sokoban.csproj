@@ -46,6 +46,8 @@
     <Compile Include="Goal.cs" />
     <Compile Include="Crate.cs" />
     <Compile Include="Obstacle.cs" />
+    <Compile Include="Parser.cs" />
+    <Compile Include="Truck.cs" />
     <Compile Include="Wall.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

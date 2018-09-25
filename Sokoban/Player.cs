@@ -9,9 +9,9 @@ namespace Sokoban
     {
         public Square locatie { get; set; }
 
-        public Square Square
+        public Truck Truck
         {
-            get => default(Square);
+            get => default(Truck);
             set
             {
             }

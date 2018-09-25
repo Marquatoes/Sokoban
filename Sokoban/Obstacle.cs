@@ -7,21 +7,11 @@ namespace Sokoban
 {
     public abstract class Obstacle
     {
-        private Square square;
 
         public bool canMove;
 
-        public Obstacle(Square s)
+        public Obstacle()
         {
-            this.square = s;
-        }
-
-        public Square Square
-        {
-            get => default(Square);
-            set
-            {
-            }
         }
     }
 }

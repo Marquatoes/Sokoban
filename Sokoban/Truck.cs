@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Sokoban
 {
-    public class Wall : Square
+    public class Truck : Obstacle
     {
-        public Wall()
+        public Truck()
         {
         }
     }

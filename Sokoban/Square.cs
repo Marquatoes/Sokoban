@@ -5,22 +5,24 @@ using System.Text;
 
 namespace Sokoban
 {
-    
+
     public class Square
     {
-        private Square Up;
-        private Square Down;
-        private Square Right;
-        private Square Left;
 
         public Square()
         {
-            
+
         }
+        public Obstacle Obstacle { get; set; }
+        public Square Left { get; set; }
+        public Square Right { get; set; }
+        public Square Up { get; set; }
+        public Square Down { get; set; }
 
         public void IsMovable()
         {
             throw new System.NotImplementedException();
         }
+
     }
 }

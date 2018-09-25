@@ -7,5 +7,9 @@ namespace Sokoban
 {
     public class Goal : Obstacle
     {
+        public Goal()
+        {
+            
+        }
     }
 }
