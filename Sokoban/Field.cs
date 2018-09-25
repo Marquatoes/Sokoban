@@ -60,6 +60,11 @@ namespace Sokoban
                     square = new Square();
                     Layout[row].Add(square);
                     break;
+                case ' ':
+                    square = new Square();
+                    square.isNotUsable = true;
+                    Layout[row].Add(square);
+                    break;
             }
         }
         private void linkField()
@@ -102,6 +107,8 @@ namespace Sokoban
                         Console.Write('o');
                     else if (current.Obstacle is Truck)
                         Console.Write('@');
+                    else if (current.isNotUsable)
+                        Console.Write(' ');
                     else
                         Console.Write('.');
 

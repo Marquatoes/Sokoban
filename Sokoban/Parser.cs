@@ -24,6 +24,7 @@ namespace Sokoban
                     levelLayout[i].Add(SplittedString[j]);
                 }
             }
+            
             return levelLayout;
         }
 

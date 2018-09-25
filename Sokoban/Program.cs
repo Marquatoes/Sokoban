@@ -11,7 +11,7 @@ namespace Sokoban
         static void Main(string[] args)
         {
             Field level = new Field();
-            level.LoadLevel(1);
+            level.LoadLevel(4);
             level.ShowField();
             Console.ReadKey();
         }
