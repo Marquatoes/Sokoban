@@ -7,9 +7,9 @@ namespace Sokoban
 {
     public class Goal : Obstacle
     {
-        public Goal()
+        public Goal(Square s) :base(s)
         {
-            
+            base.Square = s;
         }
     }
 }

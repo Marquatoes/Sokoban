@@ -43,17 +43,17 @@ namespace Sokoban
                     break;
                 case 'x':
                     square = new Square();
-                    square.Obstacle = new Goal();
+                    square.Obstacle = new Goal(square);
                     Layout[row].Add(square);
                     break;
                 case 'o':
                     square = new Square();
-                    square.Obstacle = new Crate();
+                    square.Obstacle = new Crate(square);
                     Layout[row].Add(square);
                     break;
                 case '@':
                     square = new Square();
-                    square.Obstacle = new Truck();
+                    square.Obstacle = new Truck(square);
                     Layout[row].Add(square);
                     break;
                 case '.':
