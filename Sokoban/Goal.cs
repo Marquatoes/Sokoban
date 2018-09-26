@@ -5,11 +5,11 @@ using System.Text;
 
 namespace Sokoban
 {
-    public class Goal : Obstacle
+    public class Goal : FieldObject
     {
-        public Goal(Square s) :base(s)
+        public Goal()
         {
-            base.Square = s;
+            
         }
     }
 }

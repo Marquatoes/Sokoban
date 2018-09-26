@@ -9,72 +9,82 @@ namespace Sokoban
     public class Square
     {
 
-        public Square()
-        {
-            isNotUsable = false;
-        }
-        public Obstacle Obstacle { get; set; }
+
         public Square Left { get; set; }
-
-        public void MoveObject(char direction)
-        {
-            if(this.Obstacle is Truck)
-            {
-                switch(direction)
-                {
-                    case 'u':
-                        moveToNext(this.Up,this.Up.Up);
-                        break;
-                    case 'd':
-                        moveToNext(this.Down, this.Down.Down);
-                        break;
-                    case 'l':
-                        moveToNext(this.Left, this.Left.Left);
-                        break;
-                    case 'r':
-                        moveToNext(this.Right, this.Right.Right);
-                        break;
-                }
-            }
-        }
-
-        private void moveToNext(Square squareTo, Square secondSquareto)
-        {
-            if(squareTo.Obstacle.Equals(null))
-            {
-                squareTo.Obstacle = this.Obstacle;
-                this.Obstacle = null;
-                squareTo.Obstacle.Square = squareTo;
-            }
-            else if(squareTo is Wall)
-            {
-
-            }
-            else if(squareTo.Obstacle is Crate)
-            {
-                if(secondSquareto.Obstacle is Crate || secondSquareto is Wall)
-                {
-
-                }
-                else
-                {
-                    squareTo.Obstacle = this.Obstacle;
-                    this.Obstacle = null;
-                    secondSquareto.Obstacle = squareTo.Obstacle;
-                    squareTo.Obstacle = null;
-                   
-                }
-            }
-        }
-
         public Square Right { get; set; }
         public Square Up { get; set; }
         public Square Down { get; set; }
         public bool isNotUsable { get; set; }
 
-        public void IsMovable()
+        public Square()
         {
-            throw new System.NotImplementedException();
+            isNotUsable = false;
+        }
+        public FieldObject FieldObject { get; set; }
+        public FieldObject FieldObject2 { get; set; }
+
+        public Square MoveObject(string direction)
+        {
+            Square newSquare = null;
+            if(this.FieldObject is Truck)
+            {
+                switch(direction)
+                {
+                    case "UpArrow":
+                        newSquare = moveToNext(this.Up,this.Up.Up);
+                        break;
+                    case "DownArrow":
+                        newSquare = moveToNext(this.Down, this.Down.Down);
+                        break;
+                    case "LeftArrow":
+                        newSquare = moveToNext(this.Left, this.Left.Left);
+                        break;
+                    case "RightArrow":
+                        newSquare = moveToNext(this.Right, this.Right.Right);
+                        break;
+                }
+            }
+            return newSquare;
+        }
+
+        private Square moveToNext(Square squareTo, Square secondSquareto)
+        {
+            if(squareTo.FieldObject == null)
+            {
+                squareTo.FieldObject = this.FieldObject;
+                this.FieldObject = null;
+                return squareTo;
+            }
+            else if(squareTo.FieldObject is Wall)
+            {
+                //Do nothing
+                
+            }
+            else if(squareTo.FieldObject is Crate)
+            {
+                if(secondSquareto.FieldObject is Crate || secondSquareto.FieldObject is Wall)
+                {
+                    //Do nothing
+                }
+                else
+                {
+                    if (secondSquareto.FieldObject is Goal)
+                    {
+                        Crate c = (Crate)squareTo.FieldObject;
+                        c.Complete = true;
+                        secondSquareto.FieldObject2 = squareTo.FieldObject;
+                    }
+                    else
+                    {
+                        secondSquareto.FieldObject = squareTo.FieldObject;
+                    }
+
+                    squareTo.FieldObject = this.FieldObject;
+                    this.FieldObject = null;
+                    return squareTo;
+                }
+            }
+            return this;
         }
 
     }

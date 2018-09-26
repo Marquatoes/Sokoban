@@ -5,12 +5,12 @@ using System.Text;
 
 namespace Sokoban
 {
-    public abstract class Obstacle
+    public abstract class FieldObject
     {
 
         public bool canMove;
 
-        public Obstacle()
+        public FieldObject()
         {
         }
     }

@@ -5,15 +5,17 @@ using System.Text;
 
 namespace Sokoban
 {
-    public class Truck : Obstacle
+    public class Truck : FieldObject
     {
-        public Truck(Square s) :base(s)
+        public Square Loc { get; set; }
+
+        public Truck()
         {
-            base.Square = s;
+            
         }
-        public void Move(char direction)
+        public void Move(string direction)
         {
-            base.Square.MoveObject(direction);
+            Loc = Loc.MoveObject(direction);
         }
     }
 }

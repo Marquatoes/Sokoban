@@ -9,14 +9,13 @@ namespace Sokoban
     {
         private List<List<Square>> Layout;
         private Parser parser;
-        public Field()
+        private Player player;
+
+        public Field(Player p)
         {
             Layout = new List<List<Square>>();
             parser = new Parser();
-        }
-        public void MoveCrate()
-        {
-            throw new System.NotImplementedException();
+            player = p;
         }
         public void LoadLevel(int level)
         {
@@ -34,34 +33,31 @@ namespace Sokoban
 
         private void addSquare(char type, int row)
         {
-            Square square;
+            Square square = new Square();
             switch (type)
             {    
                 case '#':
-                    square = new Wall();
+                    square.FieldObject = new Wall();
                     Layout[row].Add(square);
                     break;
                 case 'x':
-                    square = new Square();
-                    square.Obstacle = new Goal(square);
+                    square.FieldObject = new Goal();
                     Layout[row].Add(square);
                     break;
                 case 'o':
-                    square = new Square();
-                    square.Obstacle = new Crate(square);
+                    square.FieldObject = new Crate();
                     Layout[row].Add(square);
                     break;
                 case '@':
-                    square = new Square();
-                    square.Obstacle = new Truck(square);
+                    player.Truck = new Truck();
+                    square.FieldObject = player.Truck;
+                    player.Truck.Loc = square;
                     Layout[row].Add(square);
                     break;
                 case '.':
-                    square = new Square();
                     Layout[row].Add(square);
                     break;
                 case ' ':
-                    square = new Square();
                     square.isNotUsable = true;
                     Layout[row].Add(square);
                     break;
@@ -94,18 +90,24 @@ namespace Sokoban
         }
         public void ShowField()
         {
+            Console.Clear();
             foreach(List<Square> row in Layout)
             {
                 Square current = row[0];
                 while(current != null)
                 {
-                    if(current is Wall)
+                    if (current.FieldObject is Wall)
                         Console.Write('#');
-                    else if(current.Obstacle is Goal)
-                        Console.Write('x');
-                    else if (current.Obstacle is Crate)
+                    else if (current.FieldObject is Goal)
+                        if (current.FieldObject2 != null)
+                            Console.Write("0");
+                        else
+                            Console.Write('x');
+                    else if (current.FieldObject is Crate)
+                    {
                         Console.Write('o');
-                    else if (current.Obstacle is Truck)
+                    }
+                    else if (current.FieldObject is Truck)
                         Console.Write('@');
                     else if (current.isNotUsable)
                         Console.Write(' ');
