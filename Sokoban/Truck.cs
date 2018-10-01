@@ -5,17 +5,12 @@ using System.Text;
 
 namespace Sokoban
 {
-    public class Truck : FieldObject
+    public class Truck : MovableObject
     {
-        public Square Loc { get; set; }
 
-        public Truck()
+        public Truck(Square s) : base(s)
         {
             this.icon = '@';
-        }
-        public void Move(string direction)
-        {
-            Loc = Loc.MoveObject(direction);
         }
     }
 }
