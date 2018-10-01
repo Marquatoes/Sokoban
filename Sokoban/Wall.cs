@@ -9,7 +9,7 @@ namespace Sokoban
     {
         public Wall()
         {
-
+            this.icon = '#';
         }
     }
 }

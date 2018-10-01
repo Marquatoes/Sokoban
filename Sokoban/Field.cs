@@ -96,24 +96,13 @@ namespace Sokoban
                 Square current = row[0];
                 while(current != null)
                 {
-                    if (current.FieldObject is Wall)
-                        Console.Write('#');
-                    else if (current.FieldObject is Goal)
-                        if (current.FieldObject2 != null)
-                            Console.Write("0");
-                        else
-                            Console.Write('x');
-                    else if (current.FieldObject is Crate)
+                    if (current.FieldObject2 is Crate && current.FieldObject is Goal)
                     {
-                        Console.Write('o');
+                        Console.WriteLine('0');
                     }
-                    else if (current.FieldObject is Truck)
-                        Console.Write('@');
-                    else if (current.isNotUsable)
-                        Console.Write(' ');
                     else
-                        Console.Write('.');
-
+                        Console.WriteLine(current.FieldObject.icon);
+                       
                     current = current.Right;
                 }
                 Console.WriteLine();

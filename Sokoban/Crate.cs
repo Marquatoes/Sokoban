@@ -11,6 +11,7 @@ namespace Sokoban
 
         public Crate()
         {
+            this.icon = 'O';
             this.canMove = true;
             this.Complete = false;
         }

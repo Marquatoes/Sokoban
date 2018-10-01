@@ -11,7 +11,7 @@ namespace Sokoban
 
         public Truck()
         {
-            
+            this.icon = '@';
         }
         public void Move(string direction)
         {
