@@ -54,10 +54,11 @@ namespace Sokoban
                     Layout[row].Add(square);
                     break;
                 case '.':
+                    square.SquareObject = new Floor(square);
                     Layout[row].Add(square);
                     break;
                 case ' ':
-                    square.isNotUsable = true;
+                    square.SquareObject = new Empty(square);
                     Layout[row].Add(square);
                     break;
             }
@@ -92,6 +93,7 @@ namespace Sokoban
             Console.Clear();
             foreach(List<Square> row in Layout)
             {
+                int y = 0;
                 Square current = row[0];
                 while(current != null)
                 {

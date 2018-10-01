@@ -13,9 +13,9 @@ namespace Sokoban
 
         }
 
-        public Square Move()
+        public void Move(string key)
         {
-            throw new NotImplementedException();
+            this.Square = (Square)this.Square.GetType().GetProperty(key).GetValue(this.Square);
         }
     }
 }

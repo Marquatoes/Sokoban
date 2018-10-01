@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Empty.cs" />
+    <Compile Include="Floor.cs" />
     <Compile Include="Goal.cs" />
     <Compile Include="ImmovableObject.cs" />
     <Compile Include="MovableObject.cs" />
