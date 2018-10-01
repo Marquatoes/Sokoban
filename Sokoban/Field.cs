@@ -45,12 +45,12 @@ namespace Sokoban
                     Layout[row].Add(square);
                     break;
                 case 'o':
-                    square.SquareObject = new Crate(square);
+                    square.SquareObject = new Floor(square, new Crate(square));
                     Layout[row].Add(square);
                     break;
                 case '@':
                     player.Truck = new Truck(square);
-                    square.SquareObject = player.Truck;
+                    square.SquareObject = new Floor(square, player.Truck);
                     Layout[row].Add(square);
                     break;
                 case '.':
@@ -96,12 +96,14 @@ namespace Sokoban
             {
                 foreach(Square square in row)
                 {
-                    if (square.SquareObject2 is Crate && square.SquareObject is Goal)
+                    if (square.SquareObject.InUseBy() != null)
                     {
-                        Console.Write('0');
+                        Console.Write(square.SquareObject.InUseBy().GetIcon());
                     }
                     else
-                        Console.Write(square.SquareObject.Icon);
+                    {
+                        Console.Write(square.SquareObject.GetIcon());
+                    }
                 }
                 Console.WriteLine();
             }

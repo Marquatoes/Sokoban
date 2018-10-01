@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace Sokoban
 {
-    class Floor : ImmovableObject
+    class Floor : ClearObject
     {
         public Floor(Square s) : base(s)
         {
-            this.Icon = '.';
+            this.icon = '.';
+        }
+
+        public Floor(Square s, MovableObject m) : base(s, m)
+        {
+            this.icon = '.';
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Sokoban
             this.player = new Player();
             field = new Field(player);
 
-            field.LoadLevel(1);
+            field.LoadLevel(0);
             field.ShowField();
 
             WaitForTurn();

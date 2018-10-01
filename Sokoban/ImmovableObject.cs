@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sokoban
 {
-    public class ImmovableObject : SquareObject
+    public abstract class ImmovableObject : SquareObject
     {
         public ImmovableObject(Square s) : base(s)
         {

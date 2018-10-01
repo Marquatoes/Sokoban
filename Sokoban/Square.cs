@@ -21,9 +21,8 @@ namespace Sokoban
             isNotUsable = false;
         }
         public SquareObject SquareObject { get; set; }
-        public SquareObject SquareObject2 { get; set; }
 
-        public Square MoveObject(string direction)
+        /*public Square MoveObject(string direction)
         {
             Square newSquare = null;
             if(this.SquareObject is Truck)
@@ -86,6 +85,6 @@ namespace Sokoban
             }
             return this;
         }
-
+        */
     }
 }
