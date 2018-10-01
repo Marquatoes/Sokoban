@@ -44,8 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Goal.cs" />
+    <Compile Include="ImmovableObject.cs" />
+    <Compile Include="MovableObject.cs" />
     <Compile Include="Crate.cs" />
-    <Compile Include="FieldObject.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="Truck.cs" />
     <Compile Include="Wall.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="Player.cs" />
     <Compile Include="Type.cs" />
     <Compile Include="Square.cs" />
+    <Compile Include="SquareObject.cs" />
     <Compile Include="Field.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -62,6 +64,10 @@
     <None Include="SokobanClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Maps\doolhof1.txt" />
+    <Content Include="Maps\doolhof2.txt" />
+    <Content Include="Maps\doolhof3.txt" />
+    <Content Include="Maps\doolhof4.txt" />
     <Content Include="Maps\doolhof5.txt" />
     <Content Include="Maps\doolhof6.txt" />
   </ItemGroup>
