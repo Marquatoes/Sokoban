@@ -10,7 +10,7 @@ namespace Sokoban
     {
         public Empty(Square s) : base(s)
         {
-
+            this.Icon = ' ';
         }
     }
 }

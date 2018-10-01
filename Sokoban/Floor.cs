@@ -10,7 +10,7 @@ namespace Sokoban
     {
         public Floor(Square s) : base(s)
         {
-
+            this.Icon = '.';
         }
     }
 }
