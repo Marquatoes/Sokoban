@@ -5,10 +5,11 @@ using System.Text;
 
 namespace Sokoban
 {
-    public class Wall : Square
+    public class Wall : FieldObject
     {
         public Wall()
         {
+
         }
     }
 }

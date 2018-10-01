@@ -45,7 +45,7 @@
   <ItemGroup>
     <Compile Include="Goal.cs" />
     <Compile Include="Crate.cs" />
-    <Compile Include="Obstacle.cs" />
+    <Compile Include="FieldObject.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="Truck.cs" />
     <Compile Include="Wall.cs" />
@@ -60,6 +60,10 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="SokobanClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Maps\doolhof5.txt" />
+    <Content Include="Maps\doolhof6.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

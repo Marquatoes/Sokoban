@@ -7,19 +7,26 @@ namespace Sokoban
 {
     public class Game
     {
+        private Player player;
+        private Field field;
 
-        public Player Speler
+        public void Start()
         {
-            get => default(Player);
-            set
-            {
-            }
+            this.player = new Player();
+            field = new Field(player);
+
+            field.LoadLevel(5);
+            field.ShowField();
+
+            WaitForTurn();
         }
 
-        public Field Vloer
+        public void WaitForTurn()
         {
-            get;
-            set;
+            string key = Console.ReadKey().Key.ToString();
+            player.Truck.Move(key);
+            field.ShowField();
+            WaitForTurn();
         }
 
         public bool AllCratesOnDestination()

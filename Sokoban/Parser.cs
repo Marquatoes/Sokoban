@@ -14,7 +14,7 @@ namespace Sokoban
         public List<List<char>> GetLevel(int level)
         {
             List<List<char>> levelLayout = new List<List<char>>();
-            string[] allLevelRows = System.IO.File.ReadAllLines(@"C:\Users\Public\Doolhof\doolhof"+ level +".txt");
+            string[] allLevelRows = System.IO.File.ReadAllLines(@"..\..\Maps\doolhof"+ level +".txt");
             for (int i = 0; i < allLevelRows.Length; i++)
             {
                 levelLayout.Add(new List<char>());

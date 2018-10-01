@@ -5,20 +5,14 @@ using System.Text;
 
 namespace Sokoban
 {
-    public class Crate : Obstacle
+    public class Crate : FieldObject
     {
+        public bool Complete { get; internal set; }
 
         public Crate()
         {
             this.canMove = true;
+            this.Complete = false;
         }
-
-
-        public void Move()
-        {
-            throw new System.NotImplementedException();
-        }
-
-
     }
 }

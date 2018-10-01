@@ -7,15 +7,7 @@ namespace Sokoban
 {
     public class Player
     {
-        public Square locatie { get; set; }
-
-        public Truck Truck
-        {
-            get => default(Truck);
-            set
-            {
-            }
-        }
+        public Truck Truck { get; set; }
 
         public void MoveTruck(Square oldlocation, string direction)
         {
