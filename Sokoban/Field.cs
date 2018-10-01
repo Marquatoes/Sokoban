@@ -95,12 +95,12 @@ namespace Sokoban
                 Square current = row[0];
                 while(current != null)
                 {
-                    if (current.FieldObject2 is Crate && current.FieldObject is Goal)
+                    if (current.SquareObject2 is Crate && current.SquareObject is Goal)
                     {
                         Console.WriteLine('0');
                     }
                     else
-                        Console.WriteLine(current.FieldObject.icon);            
+                        Console.WriteLine(current.SquareObject.Icon);            
                     
                   current = current.Right;
                 }
