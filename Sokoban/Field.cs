@@ -54,10 +54,11 @@ namespace Sokoban
                     Layout[row].Add(square);
                     break;
                 case '.':
+                    square.SquareObject = new Floor(square);
                     Layout[row].Add(square);
                     break;
                 case ' ':
-                    square.isNotUsable = true;
+                    square.SquareObject = new Empty(square);
                     Layout[row].Add(square);
                     break;
             }
@@ -87,22 +88,20 @@ namespace Sokoban
                 }
             }
         }
+
         public void ShowField()
         {
             Console.Clear();
-            foreach(List<Square> row in Layout)
+            foreach (List<Square> row in Layout)
             {
-                Square current = row[0];
-                while(current != null)
+                foreach(Square square in row)
                 {
-                    if (current.SquareObject2 is Crate && current.SquareObject is Goal)
+                    if (square.SquareObject2 is Crate && square.SquareObject is Goal)
                     {
-                        Console.WriteLine('0');
+                        Console.Write('0');
                     }
                     else
-                        Console.WriteLine(current.SquareObject.Icon);            
-                    
-                  current = current.Right;
+                        Console.Write(square.SquareObject.Icon);
                 }
                 Console.WriteLine();
             }

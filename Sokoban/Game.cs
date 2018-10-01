@@ -15,7 +15,7 @@ namespace Sokoban
             this.player = new Player();
             field = new Field(player);
 
-            field.LoadLevel(5);
+            field.LoadLevel(1);
             field.ShowField();
 
             WaitForTurn();
@@ -24,7 +24,8 @@ namespace Sokoban
         public void WaitForTurn()
         {
             string key = Console.ReadKey().Key.ToString();
-            player.Truck.Move();
+            key = key.Split('A')[0];
+            player.Truck.Move(key);
             field.ShowField();
             WaitForTurn();
         }
