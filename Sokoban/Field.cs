@@ -88,23 +88,20 @@ namespace Sokoban
                 }
             }
         }
+
         public void ShowField()
         {
             Console.Clear();
-            foreach(List<Square> row in Layout)
+            foreach (List<Square> row in Layout)
             {
-                int y = 0;
-                Square current = row[0];
-                while(current != null)
+                foreach(Square square in row)
                 {
-                    if (current.SquareObject2 is Crate && current.SquareObject is Goal)
+                    if (square.SquareObject2 is Crate && square.SquareObject is Goal)
                     {
-                        Console.WriteLine('0');
+                        Console.Write('0');
                     }
                     else
-                        Console.WriteLine(current.SquareObject.Icon);            
-                    
-                  current = current.Right;
+                        Console.Write(square.SquareObject.Icon);
                 }
                 Console.WriteLine();
             }
