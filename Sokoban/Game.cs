@@ -24,7 +24,7 @@ namespace Sokoban
         public void WaitForTurn()
         {
             string key = Console.ReadKey().Key.ToString();
-            player.Truck.Move(key);
+            player.Truck.Move();
             field.ShowField();
             WaitForTurn();
         }

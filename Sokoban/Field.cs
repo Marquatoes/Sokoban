@@ -37,21 +37,20 @@ namespace Sokoban
             switch (type)
             {    
                 case '#':
-                    square.FieldObject = new Wall();
+                    square.SquareObject = new Wall(square);
                     Layout[row].Add(square);
                     break;
                 case 'x':
-                    square.FieldObject = new Goal();
+                    square.SquareObject = new Goal(square);
                     Layout[row].Add(square);
                     break;
                 case 'o':
-                    square.FieldObject = new Crate();
+                    square.SquareObject = new Crate(square);
                     Layout[row].Add(square);
                     break;
                 case '@':
-                    player.Truck = new Truck();
-                    square.FieldObject = player.Truck;
-                    player.Truck.Loc = square;
+                    player.Truck = new Truck(square);
+                    square.SquareObject = player.Truck;
                     Layout[row].Add(square);
                     break;
                 case '.':
@@ -96,18 +95,18 @@ namespace Sokoban
                 Square current = row[0];
                 while(current != null)
                 {
-                    if (current.FieldObject is Wall)
+                    if (current.SquareObject is Wall)
                         Console.Write('#');
-                    else if (current.FieldObject is Goal)
-                        if (current.FieldObject2 != null)
+                    else if (current.SquareObject is Goal)
+                        if (current.SquareObject2 != null)
                             Console.Write("0");
                         else
                             Console.Write('x');
-                    else if (current.FieldObject is Crate)
+                    else if (current.SquareObject is Crate)
                     {
                         Console.Write('o');
                     }
-                    else if (current.FieldObject is Truck)
+                    else if (current.SquareObject is Truck)
                         Console.Write('@');
                     else if (current.isNotUsable)
                         Console.Write(' ');

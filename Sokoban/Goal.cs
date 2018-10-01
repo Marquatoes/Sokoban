@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Sokoban
 {
-    public class Goal : FieldObject
+    public class Goal : ImmovableObject
     {
-        public Goal()
+        public Goal(Square s) : base(s)
         {
             
         }

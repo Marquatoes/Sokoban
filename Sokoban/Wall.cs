@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Sokoban
 {
-    public class Wall : FieldObject
+    public class Wall : ImmovableObject
     {
-        public Wall()
+        public Wall(Square s) : base(s)
         {
 
         }

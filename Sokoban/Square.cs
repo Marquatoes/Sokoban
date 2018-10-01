@@ -20,13 +20,13 @@ namespace Sokoban
         {
             isNotUsable = false;
         }
-        public FieldObject FieldObject { get; set; }
-        public FieldObject FieldObject2 { get; set; }
+        public SquareObject SquareObject { get; set; }
+        public SquareObject SquareObject2 { get; set; }
 
         public Square MoveObject(string direction)
         {
             Square newSquare = null;
-            if(this.FieldObject is Truck)
+            if(this.SquareObject is Truck)
             {
                 switch(direction)
                 {
@@ -49,38 +49,38 @@ namespace Sokoban
 
         private Square moveToNext(Square squareTo, Square secondSquareto)
         {
-            if(squareTo.FieldObject == null)
+            if(squareTo.SquareObject == null)
             {
-                squareTo.FieldObject = this.FieldObject;
-                this.FieldObject = null;
+                squareTo.SquareObject = this.SquareObject;
+                this.SquareObject = null;
                 return squareTo;
             }
-            else if(squareTo.FieldObject is Wall)
+            else if(squareTo.SquareObject is Wall)
             {
                 //Do nothing
                 
             }
-            else if(squareTo.FieldObject is Crate)
+            else if(squareTo.SquareObject is Crate)
             {
-                if(secondSquareto.FieldObject is Crate || secondSquareto.FieldObject is Wall)
+                if(secondSquareto.SquareObject is Crate || secondSquareto.SquareObject is Wall)
                 {
                     //Do nothing
                 }
                 else
                 {
-                    if (secondSquareto.FieldObject is Goal)
+                    if (secondSquareto.SquareObject is Goal)
                     {
-                        Crate c = (Crate)squareTo.FieldObject;
+                        Crate c = (Crate)squareTo.SquareObject;
                         c.Complete = true;
-                        secondSquareto.FieldObject2 = squareTo.FieldObject;
+                        secondSquareto.SquareObject2 = squareTo.SquareObject;
                     }
                     else
                     {
-                        secondSquareto.FieldObject = squareTo.FieldObject;
+                        secondSquareto.SquareObject = squareTo.SquareObject;
                     }
 
-                    squareTo.FieldObject = this.FieldObject;
-                    this.FieldObject = null;
+                    squareTo.SquareObject = this.SquareObject;
+                    this.SquareObject = null;
                     return squareTo;
                 }
             }

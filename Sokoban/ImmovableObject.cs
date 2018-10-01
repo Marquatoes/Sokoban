@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Sokoban
 {
-    public class Truck : MovableObject
+    public class ImmovableObject : SquareObject
     {
-
-        public Truck(Square s) : base(s)
+        public ImmovableObject(Square s) : base(s)
         {
             
         }

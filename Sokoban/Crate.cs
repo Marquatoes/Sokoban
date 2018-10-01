@@ -5,13 +5,12 @@ using System.Text;
 
 namespace Sokoban
 {
-    public class Crate : FieldObject
+    public class Crate : MovableObject
     {
         public bool Complete { get; internal set; }
 
-        public Crate()
+        public Crate(Square s) : base(s)
         {
-            this.canMove = true;
             this.Complete = false;
         }
     }
