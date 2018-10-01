@@ -10,7 +10,7 @@ namespace Sokoban
 
         public Truck(Square s) : base(s)
         {
-            
+            this.icon = '@';
         }
     }
 }

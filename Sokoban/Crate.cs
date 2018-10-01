@@ -11,6 +11,7 @@ namespace Sokoban
 
         public Crate(Square s) : base(s)
         {
+            this.icon = 'O';
             this.Complete = false;
         }
     }
