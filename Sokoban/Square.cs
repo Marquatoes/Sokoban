@@ -22,6 +22,15 @@ namespace Sokoban
         }
         public SquareObject SquareObject { get; set; }
 
+        public bool CrateOnGoal()
+        {
+            if(this.SquareObject is Goal && !(this.SquareObject.InUseBy() is Crate))
+            {
+                return false;
+            }
+            return true;
+        }
+
         /*public Square MoveObject(string direction)
         {
             Square newSquare = null;

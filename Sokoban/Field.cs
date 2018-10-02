@@ -10,6 +10,7 @@ namespace Sokoban
         private List<List<Square>> Layout;
         private Parser parser;
         private Player player;
+        private Square First;
 
         public Field(Player p)
         {
@@ -28,7 +29,23 @@ namespace Sokoban
                   addSquare(levelLayout[i][j], i);
                 }
             }
+            First = Layout[0][0];
             linkField();
+        }
+
+        internal bool CratesOnDestination()
+        {
+            for(Square first = First; first.Down != null; first = first.Down)
+            {
+                for (Square firstToRight = first; firstToRight != null; firstToRight = firstToRight.Right)
+                {
+                    if(firstToRight.CrateOnGoal() == false)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
 
         private void addSquare(char type, int row)
