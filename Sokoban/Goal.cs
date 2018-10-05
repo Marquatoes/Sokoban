@@ -5,11 +5,11 @@ using System.Text;
 
 namespace Sokoban
 {
-    public class Goal : ImmovableObject
+    public class Goal : ClearObject
     {
         public Goal(Square s) : base(s)
         {
-            this.Icon = 'x';
+            this.icon = 'x';
         }
     }
 }

@@ -21,9 +21,17 @@ namespace Sokoban
             isNotUsable = false;
         }
         public SquareObject SquareObject { get; set; }
-        public SquareObject SquareObject2 { get; set; }
 
-        public Square MoveObject(string direction)
+        public bool CrateOnGoal()
+        {
+            if(this.SquareObject is Goal && !(this.SquareObject.InUseBy() is Crate))
+            {
+                return false;
+            }
+            return true;
+        }
+
+        /*public Square MoveObject(string direction)
         {
             Square newSquare = null;
             if(this.SquareObject is Truck)
@@ -86,6 +94,6 @@ namespace Sokoban
             }
             return this;
         }
-
+        */
     }
 }
