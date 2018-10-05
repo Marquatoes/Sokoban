@@ -17,5 +17,15 @@ namespace Sokoban
         {
             this.icon = this.icon == 'O' ? '0' : 'O';
         }
+
+        public override bool canMoveTo(Square n, string key)
+        {
+            var nextObj = n.SquareObject;
+            if (nextObj.InUseBy() is Crate)
+            {
+                return false;
+            }
+            return base.canMoveTo(n, key);
+        }
     }
 }

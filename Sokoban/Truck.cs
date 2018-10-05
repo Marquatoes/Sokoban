@@ -12,5 +12,15 @@ namespace Sokoban
         {
             this.icon = '@';
         }
+
+        public override bool canMoveTo(Square n, string key)
+        {
+            var nextObj = n.SquareObject;
+            if (nextObj.InUseBy() is Employee)
+            {
+                nextObj.InUseBy().Poke();
+            }
+            return base.canMoveTo(n, key);
+        }
     }
 }

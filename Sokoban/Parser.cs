@@ -7,10 +7,6 @@ namespace Sokoban
 {
     public class Parser
     { 
-        public Parser()
-        {
-
-        }
         public List<List<char>> GetLevel(int level)
         {
             List<List<char>> levelLayout = new List<List<char>>();

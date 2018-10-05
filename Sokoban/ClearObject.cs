@@ -10,10 +10,7 @@ namespace Sokoban
     {
         protected MovableObject inUseBy { get; set; }
 
-        public ClearObject(Square s) : base(s)
-        {
-
-        }
+        public ClearObject(Square s) : base(s) { }
 
         public ClearObject(Square s, MovableObject m) : base(s)
         {
