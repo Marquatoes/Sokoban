@@ -7,12 +7,15 @@ namespace Sokoban
 {
     public class Crate : MovableObject
     {
-        public bool Complete { get; internal set; }
 
         public Crate(Square s) : base(s)
         {
-            this.Icon = 'O';
-            this.Complete = false;
+            this.icon = 'O';
+        }
+
+        public override void SwapIcon()
+        {
+            this.icon = this.icon == 'O' ? '0' : 'O';
         }
     }
 }

@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClearObject.cs" />
     <Compile Include="Empty.cs" />
     <Compile Include="Floor.cs" />
     <Compile Include="Goal.cs" />

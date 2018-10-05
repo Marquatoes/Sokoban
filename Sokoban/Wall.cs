@@ -9,7 +9,7 @@ namespace Sokoban
     {
         public Wall(Square s) : base(s)
         {
-            this.Icon = '#';
+            this.icon = '#';
         }
     }
 }
