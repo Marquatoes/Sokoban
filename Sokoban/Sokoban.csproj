@@ -50,6 +50,7 @@
     <Compile Include="MovableObject.cs" />
     <Compile Include="Crate.cs" />
     <Compile Include="Parser.cs" />
+    <Compile Include="Trap.cs" />
     <Compile Include="Truck.cs" />
     <Compile Include="Wall.cs" />
     <Compile Include="Program.cs" />

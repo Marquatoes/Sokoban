@@ -61,6 +61,10 @@ namespace Sokoban
                     square.SquareObject = new Empty(square);
                     Layout[row].Add(square);
                     break;
+                case '~':
+                    square.SquareObject = new Trap(square);
+                    Layout[row].Add(square);
+                    break;
             }
         }
         private void linkField()
