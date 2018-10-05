@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Sokoban.Goal">
-    <Position X="9.5" Y="9.75" Width="1.5" />
+    <Position X="9.5" Y="10.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Goal.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sokoban.ClearObject" Collapsed="true">
+  <Class Name="Sokoban.ClearObject">
     <Position X="9.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
@@ -15,21 +15,21 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Crate">
-    <Position X="5.25" Y="9.5" Width="1.5" />
+    <Position X="4.75" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
       <FileName>Crate.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Wall">
-    <Position X="13.5" Y="9.75" Width="1.5" />
+    <Position X="14" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Wall.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Empty">
-    <Position X="15.5" Y="9.75" Width="1.5" />
+    <Position X="16" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Empty.cs</FileName>
@@ -47,7 +47,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.Floor">
-    <Position X="11.25" Y="9.75" Width="1.5" />
+    <Position X="11.25" Y="10.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Floor.cs</FileName>
@@ -65,7 +65,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.Square">
-    <Position X="9.5" Y="0.75" Width="1.5" />
+    <Position X="10.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAIAAABAAAAAAAAAAAAAAAAAAAAACQCAAAAAAAY=</HashCode>
       <FileName>Square.cs</FileName>
@@ -75,28 +75,28 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.SquareObject">
-    <Position X="9.5" Y="3.75" Width="1.5" />
+    <Position X="10.25" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAQEgAAAABAA=</HashCode>
       <FileName>SquareObject.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sokoban.ImmovableObject" Collapsed="true">
+  <Class Name="Sokoban.ImmovableObject">
     <Position X="14.25" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ImmovableObject.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sokoban.MovableObject" Collapsed="true">
-    <Position X="6.5" Y="7.75" Width="1.5" />
+  <Class Name="Sokoban.MovableObject">
+    <Position X="4.75" Y="7.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
       <FileName>MovableObject.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Player">
-    <Position X="3" Y="6.5" Width="1.5" />
+    <Position X="2.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAEAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Player.cs</FileName>
@@ -106,7 +106,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.Truck">
-    <Position X="3.25" Y="9.5" Width="1.5" />
+    <Position X="3" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Truck.cs</FileName>
@@ -120,9 +120,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Trap">
-    <Position X="7.75" Y="9.75" Width="1.5" />
+    <Position X="7.75" Y="10.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAEAAAAAAAA=</HashCode>
       <FileName>Trap.cs</FileName>
     </TypeIdentifier>
   </Class>
