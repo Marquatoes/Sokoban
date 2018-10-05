@@ -17,7 +17,7 @@ namespace Sokoban
         public override void UsedBy(MovableObject m)
         {
             this.inUseBy = m;
-            if(m is Crate)
+            if (m is Crate || m is Truck)
             {
                 counter++;
             }
