@@ -8,6 +8,6 @@ namespace Sokoban
 {
     public abstract class ImmovableObject : SquareObject
     {
-        public ImmovableObject(Square s) : base(s) { }
+        protected ImmovableObject(Square s) : base(s) { }
     }
 }

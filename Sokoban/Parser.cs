@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Sokoban
 {
-    public class Parser
+    public static class Parser
     { 
-        public List<List<char>> GetLevel(int level)
+        public static List<List<char>> GetLevel(int level)
         {
             List<List<char>> levelLayout = new List<List<char>>();
             string[] allLevelRows = System.IO.File.ReadAllLines(@"..\..\Maps\doolhof"+ level +".txt");

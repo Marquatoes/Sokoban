@@ -8,23 +8,23 @@ namespace Sokoban
 {
     public abstract class ClearObject : SquareObject
     {
-        protected MovableObject inUseBy { get; set; }
+        protected MovableObject InUseBy { get; set; }
 
         public ClearObject(Square s) : base(s) { }
 
         public ClearObject(Square s, MovableObject m) : base(s)
         {
-            this.inUseBy = m;
+            this.InUseBy = m;
         }
 
-        public override MovableObject InUseBy()
+        public override MovableObject GetInUseBy()
         {
-            return this.inUseBy;
+            return this.InUseBy;
         }
 
         public override void UsedBy(MovableObject m)
         {
-            this.inUseBy = m;
+            this.InUseBy = m;
         }
     }
 }

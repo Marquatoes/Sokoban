@@ -17,7 +17,7 @@ namespace Sokoban
 
         public bool CrateOnGoal()
         {
-            if(this.SquareObject is Goal && !(this.SquareObject.InUseBy() is Crate))
+            if(this.SquareObject is Goal && !(this.SquareObject.GetInUseBy() is Crate))
             {
                 return false;
             }

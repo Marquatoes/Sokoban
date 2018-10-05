@@ -16,10 +16,7 @@ namespace Sokoban
             this.icon = 'Z';
         }
 
-        public override void SwapIcon()
-        {
-            this.icon = this.awake == true ? '$' : 'Z';
-        }
+        protected override void SwapIcon() => this.icon = this.awake == true ? '$' : 'Z';
 
         public override void Poke()
         {

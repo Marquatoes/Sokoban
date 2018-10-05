@@ -10,7 +10,7 @@ namespace Sokoban
         private Player player;
         private Field field;
 
-        public void Start()
+        public void Lobby()
         {
             Console.Clear();
             Console.WriteLine("╔════════════════════════════════════════════════════╗");
@@ -65,13 +65,11 @@ namespace Sokoban
             }
             else
             {
-                Start();
+                Lobby();
             }
-
-            
         }
 
-        public void LoadLevel(int level)
+        private void LoadLevel(int level)
         {
             this.player = new Player();
             this.field = new Field(player);
@@ -80,17 +78,15 @@ namespace Sokoban
             this.field.ShowField();
         }
 
-        public void WaitForTurn(int level)
+        private void WaitForTurn(int level)
         {
             string key = Console.ReadKey().Key.ToString();
             if (key == "UpArrow" || key == "DownArrow" || key == "RightArrow" || key == "LeftArrow")
             {
                 key = key.Split('A')[0];
-                player.Truck.Move(key);
-                Employee _e;
+                player.MoveTruck(key);
                 foreach (Employee e in field.GetEmployees())
                 {
-                    _e = e;
                     e.Action();
                 }
                 field.ShowField();
@@ -102,18 +98,18 @@ namespace Sokoban
             }
             else if(key == "S")
             {
-                Start();
+                Lobby();
             }
             WaitForTurn(level);
         }
 
-        public void AllCratesOnDestination()
+        private void AllCratesOnDestination()
         {
             if(field.CratesOnDestination() == true)
             {
                 Console.WriteLine("Hoera Opgelost! Druk op een toets om door te gaan");
                 Console.ReadKey();
-                Start();
+                Lobby();
             }
         }
     }

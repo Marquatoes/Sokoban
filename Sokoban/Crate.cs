@@ -7,25 +7,38 @@ namespace Sokoban
 {
     public class Crate : MovableObject
     {
-
         public Crate(Square s) : base(s)
         {
             this.icon = 'O';
         }
 
-        public override void SwapIcon()
+        protected override void SwapIcon() => this.icon = this.icon == 'O' ? '0' : 'O';
+
+        public override void Move(string key)
         {
-            this.icon = this.icon == 'O' ? '0' : 'O';
+            var nextSq = (Square)this.Square.GetType().GetProperty(key).GetValue(this.Square);
+            if (CanMoveTo(nextSq, key))
+            {
+                if (this.Square.SquareObject is Goal)
+                    this.SwapIcon();
+
+                this.Square.SquareObject.UsedBy(null);
+                this.Square = nextSq;
+                this.Square.SquareObject.UsedBy(this);
+
+                if (this.Square.SquareObject is Goal)
+                    this.SwapIcon();
+            }
         }
 
-        public override bool canMoveTo(Square n, string key)
+        protected override bool CanMoveTo(Square n, string key)
         {
             var nextObj = n.SquareObject;
-            if (nextObj.InUseBy() is Crate)
+            if (nextObj.GetInUseBy() is Crate)
             {
                 return false;
             }
-            return base.canMoveTo(n, key);
+            return base.CanMoveTo(n, key);
         }
     }
 }

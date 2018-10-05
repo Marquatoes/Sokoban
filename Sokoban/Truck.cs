@@ -13,14 +13,14 @@ namespace Sokoban
             this.icon = '@';
         }
 
-        public override bool canMoveTo(Square n, string key)
+        protected override bool CanMoveTo(Square n, string key)
         {
             var nextObj = n.SquareObject;
-            if (nextObj.InUseBy() is Employee)
+            if (nextObj.GetInUseBy() is Employee)
             {
-                nextObj.InUseBy().Poke();
+                nextObj.GetInUseBy().Poke();
             }
-            return base.canMoveTo(n, key);
+            return base.CanMoveTo(n, key);
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Sokoban
         static void Main(string[] args)
         {
             var game = new Game();
-            game.Start();
+            game.Lobby();
         }
     }
 }

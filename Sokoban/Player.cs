@@ -9,9 +9,9 @@ namespace Sokoban
     {
         public Truck Truck { get; set; }
 
-        public void MoveTruck(Square oldlocation, string direction)
+        public void MoveTruck(string direction)
         {
-            throw new System.NotImplementedException();
+            Truck.Move(direction);
         }
     }
 }

@@ -8,26 +8,27 @@ namespace Sokoban
 {
     class Trap : ClearObject
     {
-        int counter;
+        private int _counter;
+
         public Trap(Square s) : base(s)
         {
             this.icon = '~';
-            this.counter = 0;
+            this._counter = 0;
         }
         public override void UsedBy(MovableObject m)
         {
-            this.inUseBy = m;
+            this.InUseBy = m;
             if (m is Crate || m is Truck)
             {
-                counter++;
+                _counter++;
             }
-            if (counter == 3)
+            if (_counter == 3)
             {
                 this.icon = ' ';
             }
-            if(m is Crate && counter > 3)
+            if(m is Crate && _counter > 3)
             {
-                this.inUseBy = null;
+                this.InUseBy = null;
             }
         }
     }

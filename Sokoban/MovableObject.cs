@@ -9,45 +9,36 @@ namespace Sokoban
     public abstract class MovableObject : SquareObject
     {
 
-        public MovableObject(Square s) : base(s) { }
+        protected MovableObject(Square s) : base(s) { }
 
         public virtual void Move(string key)
         {
             var nextSq = (Square)this.Square.GetType().GetProperty(key).GetValue(this.Square);
-            if(canMoveTo(nextSq, key))
+            if(CanMoveTo(nextSq, key))
             {
-                if(nextSq.SquareObject.InUseBy() is Crate || nextSq.SquareObject.InUseBy() is Truck)
+                if(nextSq.SquareObject.GetInUseBy() is Crate || nextSq.SquareObject.GetInUseBy() is Truck)
                 {
-                    var movable = nextSq.SquareObject.InUseBy();
+                    var movable = nextSq.SquareObject.GetInUseBy();
                     movable.Move(key);
-                }
-
-                if (this is Crate && this.Square.SquareObject is Goal)
-                {
-                    this.SwapIcon();
                 }
 
                 this.Square.SquareObject.UsedBy(null);
                 this.Square = nextSq;
                 this.Square.SquareObject.UsedBy(this);
-                if(this is Crate && this.Square.SquareObject is Goal)
-                {
-                    this.SwapIcon();
-                }
             }
         }
 
-        public virtual bool canMoveTo(Square n, string key)
+        protected virtual bool CanMoveTo(Square n, string key)
         {
             var nextObj = n.SquareObject;
             if (nextObj is ClearObject)
             {
                 var nextOfNext = n.GetType().GetProperty(key).GetValue(n) as Square;
-                if(nextObj.InUseBy() != null && !nextObj.InUseBy().canMoveTo(nextOfNext, key))
+                if(nextObj.GetInUseBy() != null && !nextObj.GetInUseBy().CanMoveTo(nextOfNext, key))
                 {
                     return false;
                 }
-                else if(nextObj.InUseBy() is Employee)
+                else if(nextObj.GetInUseBy() is Employee)
                 {
                     return false;
                 }

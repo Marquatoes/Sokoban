@@ -10,7 +10,7 @@ namespace Sokoban
         public Square Square { get; set; }
         protected char icon;
 
-        public SquareObject(Square s)
+        protected SquareObject(Square s)
         {
             this.Square = s;
         }
@@ -20,13 +20,13 @@ namespace Sokoban
             return this.icon;
         }
 
-        public virtual MovableObject InUseBy()
+        public virtual MovableObject GetInUseBy()
         {
             return null;
         }
 
         public virtual void UsedBy(MovableObject m) { }
 
-        public virtual void SwapIcon() { }
+        protected virtual void SwapIcon() { }
     }
 }
