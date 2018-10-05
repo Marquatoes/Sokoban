@@ -27,7 +27,7 @@ namespace Sokoban
             Console.WriteLine("|      @ : truck               |                     |");
             Console.WriteLine("└────────────────────────────────────────────────────┘");
 
-            Console.WriteLine(">   Kies een doolhof(1 - 4), s = stop");
+            Console.WriteLine(">   Kies een doolhof(1 - 6), s = stop");
             int level = 0;
             var key = Console.ReadKey();
             switch (key.Key)
@@ -43,6 +43,12 @@ namespace Sokoban
                     break;
                 case ConsoleKey.D4:
                     level = 4;
+                    break;
+                case ConsoleKey.D5:
+                    level = 5;
+                    break;
+                case ConsoleKey.D6:
+                    level = 6;
                     break;
                 case ConsoleKey.S:
                     Environment.Exit(0);

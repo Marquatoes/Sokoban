@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Sokoban.Goal">
-    <Position X="9" Y="9.75" Width="1.5" />
+    <Position X="9.5" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Goal.cs</FileName>
@@ -12,76 +12,57 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
       <FileName>ClearObject.cs</FileName>
-
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="SquareObject" />
-      <Property Name="SquareObject2" />
-    </ShowAsAssociation>
   </Class>
-
   <Class Name="Sokoban.Crate">
-    <Position X="3.75" Y="9" Width="1.5" />
+    <Position X="5.25" Y="9.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
       <FileName>Crate.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Wall">
-    <Position X="9" Y="9.75" Width="1.5" />
+    <Position X="13.5" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Wall.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sokoban.Goal">
-    <Position X="7" Y="9.75" Width="1.5" />
-  <Class Name="Sokoban.Empty" Collapsed="true">
-    <Position X="7" Y="9.75" Width="1.5" />
+  <Class Name="Sokoban.Empty">
+    <Position X="15.5" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Empty.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Field">
-    <Position X="4.25" Y="1.75" Width="1.5" />
+    <Position X="5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAQAAAAAAAAAEAACgAAAJAQAIAAAAIAA=</HashCode>
       <FileName>Field.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="player" />
+      <Field Name="parser" />
+    </ShowAsAssociation>
   </Class>
-  <Class Name="Sokoban.Floor" Collapsed="true">
-    <Position X="10.75" Y="9.75" Width="1.5" />
+  <Class Name="Sokoban.Floor">
+    <Position X="11.25" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Floor.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sokoban.Game" Collapsed="true">
-    <Position X="20" Y="1.5" Width="1.5" />
+  <Class Name="Sokoban.Game">
+    <Position X="2.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BACAQAAAACAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
-  </Class>
-  <Class Name="Sokoban.Player">
-    <Position X="4.25" Y="3.5" Width="1.5" />
-    <AssociationLine Name="Truck" Type="Sokoban.Truck" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="4.25" Y="4.359" />
-        <Point X="2.25" Y="4.359" />
-        <Point X="2.25" Y="9.25" />
-      </Path>
-    </AssociationLine>
-  <Class Name="Sokoban.Truck">
-    <Position X="1.75" Y="9.25" Width="1.5" />
-    <TypeIdentifier>
-  <Class Name="Sokoban.Program" Collapsed="true">
-    <Position X="20" Y="2.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
-      <FileName>Program.cs</FileName>
-    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="player" />
+      <Field Name="field" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.Square">
     <Position X="9.5" Y="0.75" Width="1.5" />
@@ -101,39 +82,49 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.ImmovableObject" Collapsed="true">
-    <Position X="10.5" Y="7.5" Width="1.5" />
+    <Position X="14.25" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ImmovableObject.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.MovableObject" Collapsed="true">
-    <Position X="6.5" Y="7.25" Width="1.5" />
+    <Position X="6.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
       <FileName>MovableObject.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sokoban.Empty">
-    <Position X="11" Y="9.75" Width="1.5" />
+  <Class Name="Sokoban.Player">
+    <Position X="3" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Player.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Truck" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Sokoban.Truck">
+    <Position X="3.25" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Empty.cs</FileName>
+      <FileName>Truck.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Sokoban.Floor">
-    <Position X="13" Y="9.75" Width="1.5" />
+  <Class Name="Sokoban.Parser">
+    <Position X="4.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Floor.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Parser.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Enum Name="Sokoban.Type" Collapsed="true">
-    <Position X="18.25" Y="3.75" Width="1.5" />
+  <Class Name="Sokoban.Trap">
+    <Position X="7.75" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Type.cs</FileName>
+      <FileName>Trap.cs</FileName>
     </TypeIdentifier>
-  </Enum>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
