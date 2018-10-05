@@ -9,17 +9,14 @@ namespace Sokoban
     public abstract class MovableObject : SquareObject
     {
 
-        public MovableObject(Square s) : base(s)
-        {
+        public MovableObject(Square s) : base(s) { }
 
-        }
-
-        public void Move(string key)
+        public virtual void Move(string key)
         {
             var nextSq = (Square)this.Square.GetType().GetProperty(key).GetValue(this.Square);
             if(canMoveTo(nextSq, key))
             {
-                if(nextSq.SquareObject.InUseBy() is Crate && !(this.InUseBy() is Crate))
+                if(nextSq.SquareObject.InUseBy() is Crate || nextSq.SquareObject.InUseBy() is Truck)
                 {
                     var movable = nextSq.SquareObject.InUseBy();
                     movable.Move(key);
@@ -40,13 +37,17 @@ namespace Sokoban
             }
         }
 
-        private bool canMoveTo(Square n, string key)
+        public virtual bool canMoveTo(Square n, string key)
         {
             var nextObj = n.SquareObject;
             if (nextObj is ClearObject)
             {
                 var nextOfNext = n.GetType().GetProperty(key).GetValue(n) as Square;
-                if(nextObj.InUseBy() is Crate && !(nextOfNext.SquareObject is ClearObject))
+                if(nextObj.InUseBy() != null && !nextObj.InUseBy().canMoveTo(nextOfNext, key))
+                {
+                    return false;
+                }
+                else if(nextObj.InUseBy() is Employee)
                 {
                     return false;
                 }
@@ -54,5 +55,7 @@ namespace Sokoban
             }
             return false;
         }
+
+        public virtual void Poke() { }
     }
 }

@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClearObject.cs" />
+    <Compile Include="Employee.cs" />
     <Compile Include="Empty.cs" />
     <Compile Include="Floor.cs" />
     <Compile Include="Goal.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="MovableObject.cs" />
     <Compile Include="Crate.cs" />
     <Compile Include="Parser.cs" />
+    <Compile Include="RandomNumber.cs" />
     <Compile Include="Trap.cs" />
     <Compile Include="Truck.cs" />
     <Compile Include="Wall.cs" />
@@ -68,6 +70,7 @@
     <None Include="SokobanClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Maps\doolhof0.txt" />
     <Content Include="Maps\doolhof1.txt" />
     <Content Include="Maps\doolhof2.txt" />
     <Content Include="Maps\doolhof3.txt" />

@@ -11,12 +11,14 @@ namespace Sokoban
         private Parser parser;
         private Player player;
         private Square First;
+        private List<Employee> Employees;
 
         public Field(Player p)
         {
             Layout = new List<List<Square>>();
             parser = new Parser();
             player = p;
+            Employees = new List<Employee>();
         }
         public void LoadLevel(int level)
         {
@@ -46,6 +48,11 @@ namespace Sokoban
                 }
             }
             return true;
+        }
+
+        public List<Employee> GetEmployees()
+        {
+            return Employees;
         }
 
         private void addSquare(char type, int row)
@@ -80,6 +87,12 @@ namespace Sokoban
                     break;
                 case '~':
                     square.SquareObject = new Trap(square);
+                    Layout[row].Add(square);
+                    break;
+                case '$':
+                    var e = new Employee(square);
+                    square.SquareObject = new Floor(square, e);
+                    Employees.Add(e);
                     Layout[row].Add(square);
                     break;
             }
@@ -119,6 +132,8 @@ namespace Sokoban
                 {
                     if (square.SquareObject.InUseBy() != null)
                     {
+                        var usebyobject = square.SquareObject.InUseBy();
+                        var icon = square.SquareObject.InUseBy().GetIcon();
                         Console.Write(square.SquareObject.InUseBy().GetIcon());
                     }
                     else
@@ -128,6 +143,11 @@ namespace Sokoban
                 }
                 Console.WriteLine();
             }
+
+            Console.WriteLine("╔═══════════════════╗");
+            Console.WriteLine("║ r voor reset      ║");
+            Console.WriteLine("║ s om te stoppen   ║");
+            Console.WriteLine("╚═══════════════════╝");
         }
     }
 }

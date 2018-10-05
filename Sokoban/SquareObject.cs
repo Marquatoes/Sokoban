@@ -25,14 +25,8 @@ namespace Sokoban
             return null;
         }
 
-        public virtual void UsedBy(MovableObject m)
-        {
+        public virtual void UsedBy(MovableObject m) { }
 
-        }
-
-        public virtual void SwapIcon()
-        {
-
-        }
+        public virtual void SwapIcon() { }
     }
 }
