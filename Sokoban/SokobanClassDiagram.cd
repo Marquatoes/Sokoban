@@ -1,73 +1,105 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Sokoban.Goal">
-    <Position X="9.5" Y="10.5" Width="1.5" />
+    <Position X="10.25" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Goal.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.ClearObject">
-    <Position X="9.5" Y="7.75" Width="1.5" />
+    <Position X="10.25" Y="5.75" Width="1.5" />
+    <AssociationLine Name="InUseBy" Type="Sokoban.MovableObject">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="3.068" Y="0.091" Height="0.182" Width="0.798" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <HashCode>AAAAAQAAAAAAEAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
       <FileName>ClearObject.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="InUseBy" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.Crate">
-    <Position X="4.75" Y="9.5" Width="1.5" />
+    <Position X="4.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAACAAAAABAA=</HashCode>
       <FileName>Crate.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Wall">
-    <Position X="14" Y="9.75" Width="1.5" />
+    <Position X="14" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Wall.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Empty">
-    <Position X="16" Y="9.75" Width="1.5" />
+    <Position X="16" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Empty.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Field">
-    <Position X="5" Y="2.75" Width="1.5" />
+    <Position X="4.75" Y="2" Width="1.5" />
+    <AssociationLine Name="_first" Type="Sokoban.Square">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.402" Y="0.06" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAEAACgAAAJAQAIAAAAIAA=</HashCode>
+      <HashCode>AAAAAAABAAAAgAAAAAAACAAEAACBACAAIAAIAAAgAAA=</HashCode>
       <FileName>Field.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="player" />
-      <Field Name="parser" />
+      <Field Name="_first" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.Floor">
-    <Position X="11.25" Y="10.5" Width="1.5" />
+    <Position X="12" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Floor.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Game">
-    <Position X="2.5" Y="2.25" Width="1.5" />
+    <Position X="2" Y="0.5" Width="1.5" />
+    <AssociationLine Name="_player" Type="Sokoban.Player">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.1" Y="1.05" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="_field" Type="Sokoban.Field" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.125" Y="2.19" />
+        <Point X="3.125" Y="2.883" />
+        <Point X="4.75" Y="2.883" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.954" Y="0.425" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>BACAQAAAACAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <HashCode>BAAAQAAAQAAAAAAAAAAACAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="player" />
-      <Field Name="field" />
+      <Field Name="_player" />
+      <Field Name="_field" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.Square">
-    <Position X="10.25" Y="0.5" Width="1.5" />
+    <Position X="7.25" Y="2" Width="1.5" />
+    <AssociationLine Name="SquareObject" Type="Sokoban.SquareObject">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.352" Y="0.11" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAIAAABAAAAAAAAAAAAAAAAAAAAACQCAAAAAAAY=</HashCode>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAACQCAAAAAAAY=</HashCode>
       <FileName>Square.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -75,28 +107,33 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.SquareObject">
-    <Position X="10.25" Y="4" Width="1.5" />
+    <Position X="10.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAQEgAAAABAA=</HashCode>
+      <HashCode>ABAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAQEgAAAABAA=</HashCode>
       <FileName>SquareObject.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.ImmovableObject">
-    <Position X="14.25" Y="7.5" Width="1.5" />
+    <Position X="15" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ImmovableObject.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.MovableObject">
-    <Position X="4.75" Y="7.25" Width="1.5" />
+    <Position X="4.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAEAAAAAACAAAAAAAA=</HashCode>
       <FileName>MovableObject.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Player">
-    <Position X="2.75" Y="6.25" Width="1.5" />
+    <Position X="2" Y="3.5" Width="1.5" />
+    <AssociationLine Name="Truck" Type="Sokoban.Truck">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.11" Y="3.373" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAEAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Player.cs</FileName>
@@ -106,9 +143,9 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Sokoban.Truck">
-    <Position X="3" Y="9.5" Width="1.5" />
+    <Position X="2.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
       <FileName>Truck.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -120,10 +157,17 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Sokoban.Trap">
-    <Position X="7.75" Y="10.5" Width="1.5" />
+    <Position X="8.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAEAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAEAA=</HashCode>
       <FileName>Trap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sokoban.Employee">
+    <Position X="6.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAQAAABAQ=</HashCode>
+      <FileName>Employee.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

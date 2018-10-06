@@ -7,8 +7,8 @@ namespace Sokoban
 {
     public class Game
     {
-        private Player player;
-        private Field field;
+        private Player _player;
+        private Field _field;
 
         public void Lobby()
         {
@@ -71,11 +71,11 @@ namespace Sokoban
 
         private void LoadLevel(int level)
         {
-            this.player = new Player();
-            this.field = new Field(player);
+            this._player = new Player();
+            this._field = new Field(_player);
 
-            this.field.LoadLevel(level);
-            this.field.ShowField();
+            this._field.LoadLevel(level);
+            this._field.ShowField();
         }
 
         private void WaitForTurn(int level)
@@ -84,12 +84,12 @@ namespace Sokoban
             if (key == "UpArrow" || key == "DownArrow" || key == "RightArrow" || key == "LeftArrow")
             {
                 key = key.Split('A')[0];
-                player.MoveTruck(key);
-                foreach (Employee e in field.GetEmployees())
+                _player.MoveTruck(key);
+                foreach (Employee e in _field.GetEmployees())
                 {
                     e.Action();
                 }
-                field.ShowField();
+                _field.ShowField();
                 AllCratesOnDestination();
             }
             else if(key == "R")
@@ -105,7 +105,7 @@ namespace Sokoban
 
         private void AllCratesOnDestination()
         {
-            if(field.CratesOnDestination() == true)
+            if(_field.CratesOnDestination() == true)
             {
                 Console.WriteLine("Hoera Opgelost! Druk op een toets om door te gaan");
                 Console.ReadKey();
