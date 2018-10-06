@@ -12,11 +12,14 @@ namespace Sokoban
         private Square _first;
         private List<Employee> _employees;
 
-        public Field(Player p)
+        public Field(Player p, int level)
         {
             _layout = new List<List<Square>>();
             _player = p;
             _employees = new List<Employee>();
+
+            this.LoadLevel(level);
+            this.ShowField();
         }
         public void LoadLevel(int level)
         {

@@ -72,10 +72,7 @@ namespace Sokoban
         private void LoadLevel(int level)
         {
             this._player = new Player();
-            this._field = new Field(_player);
-
-            this._field.LoadLevel(level);
-            this._field.ShowField();
+            this._field = new Field(_player, level);
         }
 
         private void WaitForTurn(int level)
