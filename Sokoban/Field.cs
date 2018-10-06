@@ -124,14 +124,14 @@ namespace Sokoban
         public void ShowField()
         {
             Console.Clear();
-            foreach (List<Square> row in _layout)
+            for (Square first = _first; first != null; first = first.Down)
             {
-                foreach(Square square in row)
+                for (Square firstToRight = first; firstToRight != null; firstToRight = firstToRight.Right)
                 {
-                    if (square.SquareObject.GetInUseBy() != null)
-                        Console.Write(square.SquareObject.GetInUseBy().GetIcon());
+                    if (firstToRight.SquareObject.GetInUseBy() != null)
+                        Console.Write(firstToRight.SquareObject.GetInUseBy().GetIcon());
                     else
-                        Console.Write(square.SquareObject.GetIcon());
+                        Console.Write(firstToRight.SquareObject.GetIcon());
                 }
                 Console.WriteLine();
             }
